@@ -1,4 +1,2 @@
-package PACKAGE_NAME;
-
-public class POSApp {
+public interface POSApp {
 }

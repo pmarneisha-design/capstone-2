@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public abstract class Product {
 
-public class Product {
+
+public abstract double getPrice();
+
 }
