@@ -65,9 +65,6 @@ public class Pizza extends Product {
         return size;
     }
 
-//    public String getCrustType() {
-//        return crustType;
-//    }
 
     public boolean hasStuffedCrust() {
         return stuffedCrust;
@@ -77,95 +74,3 @@ public class Pizza extends Product {
         return sauce;
     }
 }
-//addToppings() method in M
-//        return total;
-//    }
-
-    // adds a topping to the pizza
-//        public void addTopping(Topping topping) {
-//            toppings.add(topping);
-//        }
-
-        //adds a sauce to the pizza
-//        public void addSauce(String sauce) {
-//            sauces.add(sauce);
-//        }
-
-////    // calculates total price for pizza and gets method from product class
-//@Override
-//    public double getPrice() {
-//        double total = basePrice;
-//        return total;
-//
-//    // add toppings price
-//    private double getToppingCost(Topping topping) {
-//        String category = topping.getName().equ1
-//        alsIgnoreCase();
-//        boolean extra = topping.isExtra();
-//        // stores base price of toppings
-//        double cost = 0.0;
-//        // stores additional cost if its extra
-//        double extraCost = 0.0;
-//
-//
-//        if (category.equalsIgnoreCase("Steak") || category.equalsIgnoreCase("Ham")) {
-//
-//
-////        switch (category) {
-////            case "Meat":
-////                switch (size) {
-////                    case"8":
-////                        cost = 1.00;
-////                        extraCost = 0.50;
-////                        break;
-//        }
-//
-//
-//        return 0;
-//    }
-//
-//    private String pizzaTopping(String toppings) {
-//        //Meat
-//        if (toppings.equalsIgnoreCase("pepperoni") ||
-//                toppings.equalsIgnoreCase("sausage") ||
-//                toppings.equalsIgnoreCase("ham") ||
-//                toppings.equalsIgnoreCase("bacon") ||
-//                toppings.equalsIgnoreCase("chicken") ||
-//                toppings.equalsIgnoreCase("meatball")) {
-//            return "Meat";
-//        }
-//        //Cheese
-//        else if (toppings.equalsIgnoreCase("mozzarella") ||
-//                toppings.equalsIgnoreCase("parmesan") ||
-//                toppings.equalsIgnoreCase("ricotta") ||
-//                toppings.equalsIgnoreCase("goat cheese") ||
-//                toppings.equalsIgnoreCase("buffalo cheese")) {
-//            return "Cheese";
-//            // Regular Toppings
-//        } else if (toppings.equalsIgnoreCase("onions") ||
-//                toppings.equalsIgnoreCase("mushrooms") ||
-//                toppings.equalsIgnoreCase("bell peppers") ||
-//                toppings.equalsIgnoreCase("olives") ||
-//                toppings.equalsIgnoreCase("tomatoes") ||
-//                toppings.equalsIgnoreCase("spinach") ||
-//                toppings.equalsIgnoreCase("basil") ||
-//                toppings.equalsIgnoreCase("pineapple") ||
-//                toppings.equalsIgnoreCase("anchovies")) {
-//            return "Regular Toppings";
-//            //Sauce
-//        } else if (toppings.equalsIgnoreCase("marinara") ||
-//                toppings.equalsIgnoreCase("alfredo") ||
-//                toppings.equalsIgnoreCase("pesto") ||
-//                toppings.equalsIgnoreCase("bbq") ||
-//                toppings.equalsIgnoreCase("buffalo sauce") ||
-//                toppings.equalsIgnoreCase("olive oil")) {
-//            return "Sauce";
-//        }
-//        // Sides
-//        else if (toppings.equalsIgnoreCase("red pepper") ||
-//                toppings.equalsIgnoreCase("side parmesan")) {
-//            return "Sides";
-//        }
-//        return toppings;
-//    }
-

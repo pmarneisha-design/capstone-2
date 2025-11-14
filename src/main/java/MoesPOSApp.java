@@ -2,8 +2,6 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 
-//import static sun.jvm.hotspot.debugger.win32.coff.DebugVC50X86RegisterEnums.BL;
-
 public class MoesPOSApp {
     Scanner scanner = new Scanner(System.in);
     private Order order;
@@ -121,8 +119,7 @@ public class MoesPOSApp {
             System.out.println(" No Stuffed Crust!");
         }
         //Add Toppings
-        //  List<Topping> pizzaToppings = addToppings();
-        // create pizza object
+
         Topping topping = addToppings();
         // add sauce
         System.out.println("What type of sauce would you like? Marinara, Alfredo, Pesto:");
@@ -303,36 +300,7 @@ private void addDrink() {
     System.out.println(drinkChoice + " added to your order!");
 
 }
-//
-//    System.out.println("Choose Drink Size:");
-//    System.out.println("1 - Small");
-//    System.out.println("2 - Medium");
-//    System.out.println("3 - Large");
-//
-//    int drinksizeChoice = scanner.nextInt();
-//    scanner.nextLine();
-//    double finalPrice = basePrice;
-//
-//    switch (sizeChoice)
-//
-//    {
-//        case 1:
-//            finalPrice = basePrice;
-//            break;
-//        case 2:
-//            finalPrice = basePrice + 0.50;
-//            break;
-//        case 3:
-//            finalPrice = basePrice + 1.00;
-//            break;
-//        default
-//            ;
-//            System.out.println("Invalid size choice.");
-//            return;
-//    }
-//    System.out.println("Added" + drinkName );
 
-    // Add Garlic Knots to the current order
 private void addGarlicknots() {
     System.out.println("================================");
     System.out.println("Garlic Knots");

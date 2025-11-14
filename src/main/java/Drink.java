@@ -3,10 +3,11 @@ public class Drink extends Product {
     private String flavor;
 
 
-    public Drink(String size, String flavor){
+    public Drink(String size, String flavor) {
         this.size = size;
         this.flavor = flavor;
     }
+
     public String getSize() {
         return size;
     }
@@ -22,7 +23,7 @@ public class Drink extends Product {
         // stores the price of the drink
         double price;
 
-        if ( size.equalsIgnoreCase("Small")) {
+        if (size.equalsIgnoreCase("Small")) {
             price = 2.00;
         } else if (size.equalsIgnoreCase("Medium")) {
             price = 2.50;
@@ -37,18 +38,8 @@ public class Drink extends Product {
     }
 
 
-@Override
-public String toString() {
-    return "Drink{" + "size"+getSize() + '\'' + ", flavor=" +getFlavor()+ '\'' + '}';
+    @Override
+    public String toString() {
+        return "Drink{" + "size" + getSize() + '\'' + ", flavor=" + getFlavor() + '\'' + '}';
+    }
 }
-}
-//    Scanner scanner = new Scanner(System.in);
-//
-//    System.out.println("Select drink size: Small, Medium, Large");
-//    String selectedSize = scanner.nextLine();
-//
-//    System.out.println("Select drink flavor: Pepsi, Sprite, Orange");
-//    String selectedFlavor = scanner.nextLine();
-//
-//    return new Drink(selectedSize,selectedFlavor);
-//}
