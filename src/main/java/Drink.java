@@ -3,7 +3,7 @@ public class Drink extends Product {
     private String flavor;
 
 
-    public Drink(){
+    public Drink(String size, String flavor){
         this.size = size;
         this.flavor = flavor;
     }

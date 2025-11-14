@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 //import static sun.jvm.hotspot.debugger.win32.coff.DebugVC50X86RegisterEnums.BL;
@@ -9,7 +11,7 @@ public class MoesPOSApp {
 
     public void createorderMenu() {
         boolean running = true;
-        int userInput;
+        String userInput;
         do {
             System.out.println("================================");
             System.out.println("Welcome to Moe's Pizza Parlor!");
@@ -18,26 +20,24 @@ public class MoesPOSApp {
             System.out.println("2 - Exit Application");
             System.out.println("Enter your choice: ");
 
-            userInput = scanner.nextInt();
+            userInput = scanner.nextLine();
             switch (userInput) {
-                case 1:
+                case "1":
                     createNewOrder();
                     break;
-                case 2:
+                case "2":
                     System.out.println("Thank you for visiting! Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again!");
             }
             // program keeps running as long as input is not 2
-            scanner.nextLine();
-        } while (userInput != 2);
-
+        } while (userInput != "2");
     }
 
     // Order Screen
     private void createNewOrder() {
-        int userInput;
+        String userInput;
         order = new Order(); // resets order
         do {
             System.out.println("================================");
@@ -50,33 +50,32 @@ public class MoesPOSApp {
             System.out.println("4 - Checkout");
             System.out.println("5 - Cancel Order");
             System.out.println("6 - Return to Homepage");
-            userInput = scanner.nextInt();
+            userInput = scanner.nextLine();
             switch (userInput) {
-                case 1:
+                case "1":
                     addPizza();
                     break;
-                case 2:
+                case "2":
                     addDrink();
                     break;
-                case 3:
+                case "3":
                     addGarlicknots();
                     break;
-                case 4:
+                case "4":
                     checkOut();
                     break;
-                case 5:
+                case "5":
                     cancelOrder();
                     break;
-                case 6:
+                case "6":
                     createorderMenu();
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again!");
                     createNewOrder();
             }
-            scanner.nextLine();
             // program keeps running as long as input is not 5
-        } while (userInput != 5);
+        } while (userInput != "5");
 
     }
 
@@ -249,40 +248,91 @@ private void addDrink() {
     System.out.println("4 - Water");
     System.out.println("Enter your choice:");
 
-    int drinkChoice = scanner.nextInt();
-    scanner.nextLine(); // clear buffer
-
-    String drinkName;
-    double price;
+    String drinkChoice = scanner.nextLine().trim();
 
     switch (drinkChoice) {
-        case 1: {
-            drinkName = "Coke";
-            price = 1.50;
+        case "1": {
+            drinkChoice = "Coke";
+            break;
         }
-        case 2: {
-            drinkName = "Sprite";
-            price = 1.50;
+        case "2": {
+            drinkChoice = "Sprite";
+            break;
         }
-        case 3: {
-            drinkName = "Lemonade";
-            price = 2.00;
+        case "3": {
+            drinkChoice = "Lemonade";
+            break;
         }
-        case 4: {
-            drinkName = "Water";
-            price = 1.00;
+        case "4": {
+            drinkChoice = "Water";
+            break;
         }
         default: {
             System.out.println("Invalid choice.");
             return;
         }
     }
+    System.out.println("Choose Drink Size:");
+    System.out.println("1 - Small");
+    System.out.println("2 - Medium");
+    System.out.println("3 - Large");
 
-//        Drink drink = new Drink(); // assuming DrinkItem extends Product
-//        System.out.println(drinkName + " added to your order!");
+    String drinksizeChoice = scanner.nextLine();
+
+
+    switch (drinksizeChoice)
+
+    {
+        case "1":
+            drinksizeChoice = "Small";
+            break;
+        case "2":
+            drinksizeChoice = "Medium";
+            break;
+        case "3":
+            drinksizeChoice = "Large";
+            break;
+        default:
+            System.out.println("Invalid size choice.");
+            return;
+    }
+    System.out.println("Added" + drinkChoice );
+
+   Drink drink = new Drink(drinkChoice, drinksizeChoice);
+   order.addOrderItem(drink);
+    System.out.println(drinkChoice + " added to your order!");
+
 }
+//
+//    System.out.println("Choose Drink Size:");
+//    System.out.println("1 - Small");
+//    System.out.println("2 - Medium");
+//    System.out.println("3 - Large");
+//
+//    int drinksizeChoice = scanner.nextInt();
+//    scanner.nextLine();
+//    double finalPrice = basePrice;
+//
+//    switch (sizeChoice)
+//
+//    {
+//        case 1:
+//            finalPrice = basePrice;
+//            break;
+//        case 2:
+//            finalPrice = basePrice + 0.50;
+//            break;
+//        case 3:
+//            finalPrice = basePrice + 1.00;
+//            break;
+//        default
+//            ;
+//            System.out.println("Invalid size choice.");
+//            return;
+//    }
+//    System.out.println("Added" + drinkName );
 
-// Add Garlic Knots to the current order
+    // Add Garlic Knots to the current order
 private void addGarlicknots() {
     System.out.println("================================");
     System.out.println("Garlic Knots");
@@ -304,15 +354,20 @@ private void addGarlicknots() {
 private void checkOut() {
     System.out.println("================================");
     System.out.println("Checkout");
+    System.out.println("Total: " + order.calculatePrice());
     System.out.println("================================");
 
-    if (order.isEmpty()) {
+    if (order == null ||order.isEmpty()) {
         System.out.println("Your order is empty!");
         return;
     }
 
-    order.printReceipt(); // assuming Order has printReceipt method
+    order.printReceipt();
+    // display total price
+    System.out.printf("Total: $%.2f%n", order.calculatePrice());
+
     System.out.println("Thank you for your order!");
+
     order = new Order(); // reset order after checkout
 }
 

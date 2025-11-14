@@ -91,14 +91,16 @@ public class Pizza extends Product {
 //            sauces.add(sauce);
 //        }
 
-//    // calculates total price for pizza and gets method from product class
+////    // calculates total price for pizza and gets method from product class
+//@Override
 //    public double getPrice() {
 //        double total = basePrice;
 //        return total;
-
-    // add toppings price
+//
+//    // add toppings price
 //    private double getToppingCost(Topping topping) {
-//        String category = topping.getName().equalsIgnoreCase();
+//        String category = topping.getName().equ1
+//        alsIgnoreCase();
 //        boolean extra = topping.isExtra();
 //        // stores base price of toppings
 //        double cost = 0.0;
