@@ -7,6 +7,13 @@ public class Order {
         this.orderItems.add(item);
     }
 
-    public void addPizza(PizzaItem pizza) {
+    public void addPizza(Pizza pizza) {
+    }
+
+    public boolean isEmpty() {
+        return false;
+    }
+
+    public void printReceipt() {
     }
 }

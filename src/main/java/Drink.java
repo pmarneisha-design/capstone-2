@@ -1,11 +1,9 @@
-import java.util.Scanner;
-
 public class Drink extends Product {
     private String size;
     private String flavor;
 
 
-    public Drink(String size, String flavor){
+    public Drink(){
         this.size = size;
         this.flavor = flavor;
     }
