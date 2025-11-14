@@ -1,2 +1,2 @@
-public class GarlicKnot {
+public class GarlicKnot extends Product{
 }

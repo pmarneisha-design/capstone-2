@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Drink extends  Product {
+public class Drink extends Product {
     private String size;
     private String flavor;
 

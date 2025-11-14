@@ -2,40 +2,39 @@ import java.util.Scanner;
 
  class MainApp {
 
-    public static void main(String[] args) {
-        mainMenu();
-    }
+     public static void main(String[] args) {
+         //creates object or instance of POS App
+         MoesPOSApp moesPOSApp = new MoesPOSApp();
+         // calls method that belongs to POS App object and runs the method
+         moesPOSApp.createorderMenu();
+     }
+ }
 
-    // shows users home screen options until they press X to exit
-    public static void mainMenu() {
-        Scanner scanner = new Scanner(System.in);
-        int userInput;
-
-        do {
-            System.out.println("================================");
-            System.out.println("Welcome to Moe's Pizza Parlor!");
-            System.out.println("================================");
-            System.out.println("1 - New Order");
-            System.out.println("2 - Exit Application");
-            System.out.println("Enter your choice: ");
-
-            userInput = scanner.nextInt();
-            switch (userInput) {
-                case 1:
+//        do {
+//            System.out.println("================================");
+//            System.out.println("Welcome to Moe's Pizza Parlor!");
+//            System.out.println("================================");
+//            System.out.println("1 - New Order");
+//            System.out.println("2 - Exit Application");
+//            System.out.println("Enter your choice: ");
+//
+//            userInput = scanner.nextInt();
+//            switch (userInput) {
+//                case 1:
 //                 createorderMenu(scanner);
-                    break;
-                case 2:
-                    System.out.println("Thank you for visiting! Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again!");
-            }
-            // program keeps running as long as input is not 2
-        } while (userInput != 2);
-
-        scanner.close();
-    }
-}
+//                    break;
+//                case 2:
+//                    System.out.println("Thank you for visiting! Goodbye!");
+//                    break;
+//                default:
+//                    System.out.println("Invalid choice. Please try again!");
+//            }
+//            // program keeps running as long as input is not 2
+//        } while (userInput != 2);
+//
+//        scanner.close();
+//    }
+//}
 
 
 
